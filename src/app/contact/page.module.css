@@ -1,0 +1,780 @@
+.pageContainer {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* 1. Hero Section */
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 50px;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.95));
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  line-height: 1.6;
+}
+
+.glassCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.glassCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.glassIcon {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.glassTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.glassText {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+/* 2. Form Section */
+.formSection {
+  padding: 6rem 0;
+  background-color: var(--bg-secondary);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.formLeft, .formRight {
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: var(--text-primary);
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.formInput, .formTextarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formLabel {
+  position: absolute;
+  top: 1rem;
+  inset-inline-start: 0.5rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.formInput:focus ~ .formLabel,
+.formInput:not(:placeholder-shown) ~ .formLabel,
+.formTextarea:focus ~ .formLabel,
+.formTextarea:not(:placeholder-shown) ~ .formLabel,
+select.formInput ~ .formLabel {
+  top: -0.8rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.formUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: 0.4s ease all;
+  transform: translateX(-50%);
+}
+
+.formInput:focus ~ .formUnderline,
+.formTextarea:focus ~ .formUnderline {
+  width: 100%;
+}
+
+.submitBtn {
+  background: var(--accent);
+  color: var(--dark-primary);
+  border: none;
+  padding: 1.25rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  background: #fde047;
+  transform: translateY(-2px);
+}
+
+.rightTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+.promisesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.promiseItem {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+}
+
+.promiseIconWrapper {
+  background: rgba(234, 179, 8, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promiseIcon {
+  color: var(--accent);
+}
+
+.promiseText {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* 3. Map Section */
+.mapSection {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+}
+
+.mapContainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapPlaceholder {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at center, rgba(234, 179, 8, 0.1) 0%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pinMarker {
+  position: relative;
+  z-index: 2;
+}
+
+.pinIcon {
+  color: var(--accent);
+  position: relative;
+  z-index: 2;
+}
+
+.pinPulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(234, 179, 8, 0.3);
+  border-radius: 50%;
+  z-index: 1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+.mapOverlay {
+  position: absolute;
+  bottom: 2rem;
+  inset-inline-end: 2rem;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  z-index: 3;
+}
+
+.mapOverlayTitle {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.mapOverlayText {
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.mapDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* 4. FAQ Section */
+.faqSection {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+}
+
+.sectionCenterTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+}
+
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.faqItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.faqItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.faqItem:hover::before {
+  opacity: 1;
+}
+
+.faqHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: start;
+}
+
+.faqQuestion {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.faqIcon {
+  color: var(--accent);
+  transition: transform 0.4s ease;
+}
+
+.faqIcon.open {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.faqAnswerInner {
+  padding: 0 2rem 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* 5. Stacking Cards */
+.stackingSection {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stackCardsContainer {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  position: relative;
+  margin: 2rem auto 0;
+}
+
+.stackCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+  border: 1px solid var(--border);
+  will-change: transform;
+}
+
+.stackTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.stackText {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* 6. Branches Section */
+.branchesSection {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+}
+
+.branchesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.branchCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.branchCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+}
+
+.branchIcon {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.branchTitle {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.branchInfoList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.branchInfoList li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.branchInfoList li svg {
+  color: var(--accent);
+}
+
+/* 7. Parallax Break */
+.parallaxSection {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallaxWrapper {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  z-index: 0;
+}
+
+.parallaxOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  z-index: 1;
+}
+
+.parallaxContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.parallaxContent h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* 8. Quick Actions */
+.actionsSection {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+}
+
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.actionCard {
+  background: var(--bg-card);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.actionCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 40px rgba(234, 179, 8, 0.1);
+  transform: translateY(-10px);
+}
+
+.actionIcon {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.actionTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.actionDesc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* 9. Testimonial Highlight */
+.testimonialSection {
+  padding: 8rem 0;
+  background: var(--bg-secondary);
+}
+
+.testimonialCard {
+  background: var(--dark-primary);
+  border-radius: 2rem;
+  padding: 5rem 4rem;
+  text-align: center;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+.quoteIcon {
+  color: var(--accent);
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.quoteText {
+  font-size: 2rem;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  color: #F8FAFC;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.authorImageWrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid var(--accent);
+}
+
+.authorDetails {
+  text-align: start;
+}
+
+.authorName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #F8FAFC;
+}
+
+.authorRole {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+/* 10. Newsletter CTA */
+.newsletterSection {
+  padding: 6rem 0 8rem;
+  background: var(--bg-primary);
+}
+
+.newsletterCard {
+  background: linear-gradient(135deg, var(--accent), #fde047);
+  border-radius: 2rem;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: var(--dark-primary);
+}
+
+.newsletterTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--dark-primary);
+}
+
+.newsletterDesc {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-inline: auto;
+  color: rgba(15, 23, 42, 0.85);
+  line-height: 1.6;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.newsletterBtn {
+  background: var(--dark-primary);
+  color: #F8FAFC;
+  border: none;
+  padding: 0 2.5rem;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.newsletterBtn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroTitle {
+    font-size: 3rem;
+  }
+  .stackingSection {
+    height: auto;
+    padding: 4rem 0;
+  }
+  .stackCardsContainer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .stackCard {
+    position: relative;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  .newsletterForm {
+    flex-direction: column;
+  }
+  .newsletterBtn {
+    padding: 1.25rem;
+  }
+  .parallaxContent h2 {
+    font-size: 2.2rem;
+  }
+  .quoteText {
+    font-size: 1.5rem;
+  }
+  .testimonialCard {
+    padding: 3rem 2rem;
+  }
+}

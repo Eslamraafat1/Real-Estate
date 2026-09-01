@@ -1,0 +1,111 @@
+/* ============================================
+   THEME TOGGLE — Premium Sun/Moon Switch
+   ============================================ */
+
+.toggle {
+  position: relative;
+  width: 58px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color var(--transition-theme), border-color var(--transition-theme),
+    box-shadow var(--transition-base);
+}
+
+.toggle:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(234, 179, 8, 0.35);
+}
+
+/* Rail icons: stars/moon sparkle on the dark side, sun rays on light */
+.icons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  pointer-events: none;
+}
+
+.sunIcon {
+  color: #f59e0b;
+  opacity: 1;
+  transition: opacity var(--transition-base);
+}
+
+.moonIcon {
+  color: #94a3b8;
+  opacity: 0.6;
+  transition: opacity var(--transition-base);
+}
+
+.dark .sunIcon {
+  opacity: 0.25;
+}
+
+.dark .moonIcon {
+  opacity: 1;
+  color: #e2e8f0;
+}
+
+/* Sliding knob */
+.knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.35);
+  transition: transform 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    background-color var(--transition-theme);
+}
+
+.light .knob {
+  transform: translateX(28px);
+}
+
+.knobSun {
+  color: #f59e0b;
+  animation: spin-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.knobMoon {
+  color: #94a3b8;
+  animation: spin-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dark {
+  background: linear-gradient(135deg, #1e293b, #334155 60%, #1e293b);
+}
+
+.light {
+  background: linear-gradient(135deg, #fde68a, #fcd34d 60%, #fde68a);
+}
+
+@keyframes spin-in {
+  0% {
+    transform: rotate(-160deg) scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .knob,
+  .knobSun,
+  .knobMoon {
+    animation: none;
+  }
+}

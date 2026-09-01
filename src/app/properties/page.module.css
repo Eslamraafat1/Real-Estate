@@ -1,0 +1,687 @@
+/* page.module.css */
+.container {
+  overflow-x: hidden;
+  background-color: var(--bg-primary, #F8FAFC);
+}
+
+/* 1. Hero Banner */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=90');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #F8FAFC;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.titleLine {
+  display: block;
+}
+
+.goldUnderline {
+  height: 4px;
+  background: var(--accent, #EAB308);
+  width: 0;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* 2. Filter Bar */
+.filterSection {
+  padding: 2rem;
+  background: var(--bg-primary, #F8FAFC);
+  position: relative;
+  z-index: 10;
+}
+
+.filterContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-strong);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterGroup label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary, #1E293B);
+}
+
+.filterSelect {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.filterSelect:focus {
+  border-color: var(--accent, #EAB308);
+}
+
+/* 3. Properties Grid */
+.propertiesSection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--bg-card, white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+}
+
+.cardImageWrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.typeBadge {
+  position: absolute;
+  top: 1rem;
+  inset-inline-end: 1rem;
+  background: var(--accent, #EAB308);
+  color: var(--dark-primary, #0F172A);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardPrice {
+  color: var(--accent, #EAB308);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.cardLocation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary, #64748B);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.cardSpecs {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.spec {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.noResults {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.5rem;
+  color: var(--text-secondary, #64748B);
+  grid-column: 1 / -1;
+}
+
+/* 4. Horizontal Cards Scroll */
+.horizontalSection {
+  height: 100vh;
+  background: var(--dark-primary, #0F172A);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.horizontalTrack {
+  display: flex;
+  gap: 4rem;
+  padding: 0 10vw;
+  width: max-content;
+}
+
+.horizCard {
+  width: 70vw;
+  height: 60vh;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.horizCardBg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.horizOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,23,42,0.9), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+}
+
+.horizTitle {
+  color: #F8FAFC;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.horizTitle span {
+  color: var(--accent, #EAB308);
+}
+
+/* 5. Investment Stats Band */
+.statsSection {
+  background: var(--dark-primary, #0F172A);
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(234, 179, 8, 0.2);
+  border-bottom: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+.statsGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  text-align: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statIcon {
+  color: var(--accent, #EAB308);
+  padding: 1rem;
+  background: rgba(234, 179, 8, 0.1);
+  border-radius: 50%;
+}
+
+.statNumber {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent, #EAB308);
+  line-height: 1;
+}
+
+.statLabel {
+  color: #F8FAFC;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* 6. Exclusive Offers Parallax */
+.bannerSection {
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bannerBg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=90');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.bannerOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.8);
+  z-index: 2;
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.bannerTitle {
+  font-size: 3rem;
+  color: #F8FAFC;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.bannerTitle span {
+  color: var(--accent, #EAB308);
+}
+
+.bannerText {
+  color: #cbd5e1;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.btnPrimary {
+  background: var(--accent, #EAB308);
+  color: var(--dark-primary, #0F172A);
+  padding: 1rem 2.5rem;
+  border-radius: 3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(234, 179, 8, 0.3);
+}
+
+/* 7. Why Choose Us - Stacking Cards */
+.stackingSection {
+  padding: 6rem 2rem;
+  background: var(--dark-secondary, #1E293B);
+  min-height: 100vh;
+}
+
+.stackingTitle {
+  text-align: center;
+  color: #F8FAFC;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.stackingContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.stackCard {
+  background: linear-gradient(135deg, var(--dark-primary, #0F172A), var(--dark-secondary, #1E293B));
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  color: #F8FAFC;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 20vh;
+}
+
+.stackCard:nth-child(1) { top: 20vh; }
+.stackCard:nth-child(2) { top: 25vh; }
+.stackCard:nth-child(3) { top: 30vh; }
+
+.stackIcon {
+  background: var(--accent, #EAB308);
+  color: var(--dark-primary, #0F172A);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.stackContent h3 {
+  font-size: 1.5rem;
+  color: var(--accent, #EAB308);
+  margin-bottom: 0.5rem;
+}
+
+/* 8. Popular Areas Section */
+.areasSection {
+  padding: 6rem 2rem;
+  background: var(--bg-primary, #F8FAFC);
+}
+
+.areasTitle {
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.areasGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.areaCard {
+  position: relative;
+  height: 300px;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.areaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.areaCard:hover .areaImage {
+  transform: scale(1.1);
+}
+
+.areaOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,23,42,0.9), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.areaName {
+  color: var(--accent, #EAB308);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.areaCount {
+  color: #F8FAFC;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+}
+
+.areaCard:hover .areaCount {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 9. Request Consultation Form */
+.formSection {
+  padding: 6rem 2rem;
+  background: var(--bg-primary, #F8FAFC);
+}
+
+.formContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.formLeft {
+  padding: 3rem;
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.formTitle {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.formGroup {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.formInput {
+  width: 100%;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--border);
+  font-size: 1rem;
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+}
+
+.formLabel {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1rem;
+  color: var(--text-secondary, #64748B);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.formInput:focus ~ .formLabel,
+.formInput:valid ~ .formLabel {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  color: var(--accent, #EAB308);
+}
+
+.formLine {
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent, #EAB308);
+  transition: width 0.3s;
+}
+
+.formInput:focus ~ .formLine {
+  width: 100%;
+}
+
+.formRight {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border-radius: 1rem;
+  border-inline-end: 4px solid var(--accent, #EAB308);
+}
+
+.contactIcon {
+  color: var(--accent, #EAB308);
+  padding: 1rem;
+  background: rgba(234, 179, 8, 0.1);
+  border-radius: 50%;
+}
+
+.contactInfo h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+}
+
+.contactInfo p {
+  color: var(--text-secondary, #64748B);
+}
+
+/* 10. Newsletter Section */
+.newsletterSection {
+  background: var(--dark-primary, #0F172A);
+  padding: 6rem 2rem;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.newsDeco {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(234, 179, 8, 0.1);
+  border-radius: 50%;
+}
+.newsDeco1 { top: -150px; right: -150px; }
+.newsDeco2 { bottom: -150px; left: -150px; }
+
+.newsletterContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.newsTitle {
+  color: var(--accent, #EAB308);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.newsText {
+  color: #F8FAFC;
+  margin-bottom: 2rem;
+}
+
+.newsForm {
+  display: flex;
+  gap: 1rem;
+}
+
+.newsInput {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border-radius: 3rem;
+  border: 1px solid var(--accent, #EAB308);
+  background: transparent;
+  color: #F8FAFC;
+  font-family: inherit;
+  outline: none;
+}
+.newsInput::placeholder { color: rgba(248,250,252,0.5); }
+
+.newsBtn {
+  background: linear-gradient(to right, #EAB308, #ca9a05);
+  color: var(--dark-primary, #0F172A);
+  padding: 0 2rem;
+  border-radius: 3rem;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s;
+}
+.newsBtn:hover { transform: scale(1.05); }
+
+@media (max-width: 900px) {
+  .formContainer { grid-template-columns: 1fr; }
+  .horizontalTrack { gap: 2rem; }
+  .horizCard { width: 85vw; }
+}
